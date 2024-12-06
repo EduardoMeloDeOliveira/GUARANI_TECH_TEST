@@ -8,7 +8,7 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "gua_clientes")
+@Entity
 @Table(name = "gua_clientes")
 @Getter
 @Setter
@@ -18,9 +18,9 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "cli_codigoCliente")
-    private Long id;
+    private String id;
 
     @Column(name = "cli_razaoSocial", length = 100, nullable = false)
     private String razaoSocial;

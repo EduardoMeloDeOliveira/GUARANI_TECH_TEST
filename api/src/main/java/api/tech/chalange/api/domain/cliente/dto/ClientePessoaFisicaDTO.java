@@ -9,7 +9,7 @@ import java.util.List;
 @Builder
 public record ClientePessoaFisicaDTO (
 
-        Long clienteId,
+        String clienteId,
         String razaoSocial,
         String primeiroEmail,
         String segundoEmail,

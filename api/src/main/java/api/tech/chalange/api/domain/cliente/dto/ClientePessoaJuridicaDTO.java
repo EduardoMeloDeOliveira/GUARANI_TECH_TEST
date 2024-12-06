@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 @Data
 public class ClientePessoaJuridicaDTO implements ClienteBaseDTO {
-    private Long clienteId;
+    private String clienteId;
     private String nomeFantasia;
     private String primeiroEmail;
     private String segundoEmail;
