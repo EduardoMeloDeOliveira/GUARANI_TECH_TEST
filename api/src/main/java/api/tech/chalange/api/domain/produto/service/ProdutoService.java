@@ -19,7 +19,7 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
 
-    public List<ProdutoResDTO> buscarProdutos(String descricao, String codigo, Double estoqueMinimo, Double precoMinimo, Double precoMaximo) {
+    public List<ProdutoResDTO> buscarProdutos(String descricao, String codigo, Double estoqueMinimo, Double precoMaximo) {
         Specification<Produto> spec = Specification.where((root, query, criteriaBuilder) -> {
             Predicate predicate = criteriaBuilder.conjunction();
 
@@ -31,9 +31,6 @@ public class ProdutoService {
             }
             if (estoqueMinimo != null) {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.greaterThanOrEqualTo(root.get("estoque"), estoqueMinimo));
-            }
-            if (precoMinimo != null) {
-                predicate = criteriaBuilder.and(predicate, criteriaBuilder.greaterThanOrEqualTo(root.get("precoMinimo"), precoMinimo));
             }
             if (precoMaximo != null) {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.lessThanOrEqualTo(root.get("precoMaximo"), precoMaximo));
